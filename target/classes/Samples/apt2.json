@@ -1,0 +1,87 @@
+{
+  "type": "bundle",
+  "id": "bundle--cf20f99b-3ed2-4a9f-b4f1-d660a7fc8241",
+  "objects": [ {
+      "type": "tool",
+      "spec_version": "2.1",
+      "id": "tool--4d82bd3e-24a3-4f9d-b8f3-b57267fe06a9",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "name": "lslsass",
+      "tool_types": [
+        "credential-exploitation"
+      ],
+      "description": "Dump active logon session password hashes from the lsass process",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mandiant-attack-lifecycle-model",
+          "phase_name": "escalate-privileges"
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "lslsass",
+          "url": "http://www.truesec.se"
+        }
+      ]
+    },{
+      "type": "tool",
+      "spec_version": "2.1",
+      "id": "tool--7de5dfcc-6809-4772-9f11-cf26c2be53aa",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "name": "mimikatz",
+      "tool_types": [
+        "credential-exploitation"
+      ],
+      "description": "A utility primarily used for dumping password hashes",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mandiant-attack-lifecycle-model",
+          "phase_name": "escalate-privileges"
+        }
+      ],
+      "external_references": [
+        {
+          "source_name": "mimikatz",
+          "url": "http://blog.gentilkiwi.com/mimikatz"
+        }
+      ]
+    },{
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--d080c1ea-1dd7-4da9-b64b-e68bb1c5887e",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "relationship_type": "uses",
+      "source_ref": "attack-pattern--e13f3e6d-4f9c-4265-b1cf-f997a1bf7827",
+      "target_ref": "tool--7de5dfcc-6809-4772-9f11-cf26c2be53aa"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--44686fda-311c-4cdb-abef-80e922e7a3fb",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "relationship_type": "uses",
+      "source_ref": "attack-pattern--e13f3e6d-4f9c-4265-b1cf-f997a1bf7827",
+      "target_ref": "tool--98fd8dc1-6cc7-4908-899f-07473f55149a"
+    },
+{
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--e13f3e6d-4f9c-4265-b1cf-f997a1bf7827",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "name": "Privilege Escalation",
+      "description": "Escalating privileges involves acquiring items (most often usernames and passwords) that will allow access to more resources within the network. APT1 predominantly uses publicly available tools to dump password hashes from victim systems in order to obtain legitimate user credentials.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mandiant-attack-lifecycle-model",
+          "phase_name": "escalate-privileges"
+        }
+      ]
+   
+      }
+    ]
+}

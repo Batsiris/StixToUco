@@ -1,0 +1,54 @@
+{
+  "type": "bundle",
+  "id": "bundle--cp20f10b-3ed2-4a9f-b4f1-d680a7fc9401",
+  "objects": [ 
+  {
+      "type": "intrusion-set",
+      "spec_version": "2.1",
+      "id": "intrusion-set--da1065ce-972c-4605-8755-9cd1074e3b5a",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "name": "APT1",
+      "description": "APT1 is a single organization of operators that has conducted a cyber espionage campaign against a broad range of victims since at least 2006.",
+      "first_seen": "2006-06-01T18:13:15.684Z",
+      "resource_level": "government",
+      "primary_motivation": "organizational-gain",
+      "aliases": [
+        "Comment Crew",
+        "Comment Group",
+        "Shady Rat"
+      ]
+    },
+{
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--94624865-2709-443f-9b4c-2891985fd69b",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "name": "Unit 61398",
+      "description": "Unit 61398 functions as the Third Department's premier entity targeting the United States and Canada, most likely focusing on political, economic, and military-related intelligence.",
+      "threat_actor_types": [
+        "nation-state"
+      ],
+      "resource_level": "government",
+      "roles": [
+        "agent"
+      ],
+      "aliases": [
+        "PLA GSD's 3rd Department, 2nd Bureau",
+        "Military Unit Cover Designator (MUCD) 61398"
+      ],
+      "primary_motivation": "organizational-gain"
+    },
+{
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--8668d82a-1c97-4bea-a367-e391b025e00e",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "intrusion-set--da1065ce-972c-4605-8755-9cd1074e3b5a",
+      "target_ref": "threat-actor--94624865-2709-443f-9b4c-2891985fd69b"
+    }
+ ]
+}

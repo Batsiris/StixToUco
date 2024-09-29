@@ -1,0 +1,66 @@
+{
+  "type": "bundle",
+  "id": "bundle--cf20f99b-3ed2-4a9f-b4f1-d660a7fc8824",
+  "objects": [  
+
+{
+      "type": "malware",
+      "spec_version": "2.1",
+      "is_family": true,
+      "id": "malware--302ac5b5-486c-4c99-8cad-4426aeaf43c2",
+      "created": "2015-06-15T09:12:16.432Z",
+      "modified": "2015-06-15T09:12:16.432Z",
+      "name": "PIVY Variant (4e84b1448cf96fabe88c623b222057c4)",
+      "description": "The sample 4e84b1448cf96fabe88c6237c4 connected to jj.mysecondarydns.com with the password menuPass",
+      "malware_types": [
+        "remote-access-trojan"
+      ]
+    },
+ {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--721976f9-56d7-4749-8c69-b3ac7c315g50",
+      "created": "2015-06-15T09:12:16.432Z",
+      "modified": "2015-06-15T09:12:16.432Z",
+      "name": "menuPass",
+      "description": "The threat actor behind menuPass prefers to target U.S. and foreign defense contractors.",
+      "first_seen": "2009-12-14T00:00:00.000000Z"
+    },
+ {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--4f784f2f-7d8e-4f12-9ddd-b685055f8046",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--b6cc482d-89db-4e6b-a592-723070f6d25d",
+      "target_ref": "campaign--721976f9-56d7-4749-8c69-b3ac7c315g50"
+    },
+ {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "pattern_type": "stix",
+      "id": "indicator--b6cc482d-89db-4e6b-a592-723070f6d25d",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "name": "3q.wubangtu.info",
+      "description": "The sample a5965b750997dbecec61358d41ac93c7 connected to 3q.wubangtu.info with the password menuPass. The domain wubangtu.info also resolved to 123.183.210.28.",
+      "pattern": "[domain-name:value = '3q.wubangtu.info' OR ipv4-addr:value = '123.183.210.28']",
+      "indicator_types": [
+        "malicious-activity",
+        "attribution"
+      ],
+      "valid_from": "2015-05-15T09:12:16.432678Z"
+    },
+  {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--2c11dcc0-7968-4c07-bdde-791a8f5e2e67",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--721976f9-56d7-4749-8c69-b3ac7c315g50",
+      "target_ref": "malware--302ac5b5-486c-4c99-8cad-4426aeaf43c2"
+    }
+    ]
+}

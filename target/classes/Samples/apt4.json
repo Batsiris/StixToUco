@@ -1,0 +1,99 @@
+{
+  "type": "bundle",
+  "id": "bundle--cp23f10b-3ed2-4a9f-b4f1-d680a7fc9401",
+  "objects": [ 
+  {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--ecf1c7de-d96c-41c6-a510-b9c65cdc9e3b",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "name": "Mei Qiang",
+      "identity_class": "individual",
+      "sectors": [
+        "government-national"
+      ],
+      "contact_information": "mei_qiang_82@sohu.com"
+    },
+ {
+      "type": "malware",
+      "spec_version": "2.1",
+      "is_family": true,
+      "id": "malware--fb490cdb-6760-41eb-a79b-0b930a50c017",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "name": "AURIGA",
+      "malware_types": [
+        "backdoor",
+        "keylogger"
+      ],
+      "description": "Malware family that contains functionality for keystroke logging, creating and killing processes, performing file system and registry modifications, etc."
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "is_family": false,
+      "id": "malware--ea50ecb7-2cd4-4895-bd08-31cd591ed0ca",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "name": "BANGAT",
+      "malware_types": [
+        "backdoor",
+        "keylogger"
+      ],
+      "description": "Malware family that contains functionality for keylogging, creating and killing processes, performing filesystem and registry modifications, etc."
+    },
+{
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--02e7c48f-0301-4c23-b3e4-02e5a0114c21",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "name": "SuperHard",
+      "threat_actor_types": [
+        "nation-state"
+      ],
+      "sophistication": "expert",
+      "aliases": [
+        "dota",
+        "Rodney",
+        "Raith"
+      ],
+      "resource_level": "government",
+      "roles": [
+        "malware-author"
+      ],
+      "primary_motivation": "organizational-gain"
+    },
+ {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--71e6832f-17ee-42fd-938d-c7f881be2028",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "threat-actor--02e7c48f-0301-4c23-b3e4-02e5a0114c21",
+      "target_ref": "identity--ecf1c7de-d96c-41c6-a510-b9c65cdc9e3b"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--9dd881a7-6e9b-4c35-bef5-7a777bca65d3",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--02e7c48f-0301-4c23-b3e4-02e5a0114c21",
+      "target_ref": "malware--fb490cdb-6760-41eb-a79b-0b930a50c017"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--306ce398-f708-47f9-88a1-38aa5b9985fc",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--02e7c48f-0301-4c23-b3e4-02e5a0114c21",
+      "target_ref": "malware--ea50ecb7-2cd4-4895-bd08-31cd591ed0ca"
+    }
+ ]
+}
