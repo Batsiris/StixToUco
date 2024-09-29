@@ -39,7 +39,7 @@ public class StixParser {
 */
 
         String datasetPath = "C:\\Users\\user\\Downloads\\Samples"; // Update this to the path where the STIX files are located
-          //String datasetPath="C:\\Users\\user\\Downloads\\example";
+
         File folder = new File(datasetPath);
         File[] listOfFiles = folder.listFiles((dir, name) -> name.endsWith(".json"));
 
@@ -61,9 +61,6 @@ public class StixParser {
                         Model model = ModelFactory.createDefaultModel();
                         model.setNsPrefix("uco", UCO_NAMESPACE);
                         Stixthing = model.createResource(UCO_NAMESPACE + stixJson.get("id").getAsString()).addProperty(RDF.type, RDFS.Class);
-                        // Define common STIX types as RDF classes
-
-                        // Add other STIX types as needed
 
                         for (JsonElement jsonElement : objects) {
                             JsonObject stixObject = jsonElement.getAsJsonObject();
@@ -110,7 +107,7 @@ public class StixParser {
                 Resource ucoClass = model.createResource(UCO_NAMESPACE +"CourseOfAction").addProperty(RDF.type, RDFS.Class);
                 model.add(Stixthing,RDFS.subClassOf,ucoClass);
                 model.add(resource, RDF.type, ucoClass);
-        }else //if ("malware".equals(type)) {
+        }else
             {
                // Resource ucoClass = model.createResource(UCO_NAMESPACE + ucoclass(type)).addProperty(RDFS.subClassOf, Stixthing);
                  Resource ucoClass = model.createResource(UCO_NAMESPACE +ucoclass(type)).addProperty(RDF.type, RDFS.Class);
@@ -174,7 +171,7 @@ public class StixParser {
                         String referencedId = refElement.getAsString();
                         Resource referencedResource = model.createResource(UCO_NAMESPACE + referencedId);
                         resource.addProperty(property, referencedResource);
-                        model.add(property, RDF.type, OWL.ObjectProperty); // Declare as an Object Property
+                        model.add(property, RDF.type, OWL.ObjectProperty); //Declare as an Object Property
                     }
                 }
             } else if (value.isJsonPrimitive()) {
@@ -195,10 +192,6 @@ public class StixParser {
                 resource.addProperty(property, subjectLiteral);
                 model.add(resource, property, subjectLiteral);
 
-
-                // model.add(resource,property, subjectLiteral);
-                // Resource object model.createResource(value.getAsString()).addProperty(XSD.xstring)
-                // resource.addProperty(property, value.getAsString());
             } else if (value.isJsonArray()) {
 
                 JsonArray array = value.getAsJsonArray();
@@ -206,7 +199,7 @@ public class StixParser {
                     if (element.isJsonPrimitive()) {
                         String[] splitValues = element.getAsString().split("-");
                         for (String splitValue : splitValues) {
-                            // Create a triple for each part of the split string
+
                             Literal splitLiteral = model.createTypedLiteral(splitValue.trim(), XSD.xstring.getURI());
                             model.add(property, RDF.type, OWL.DatatypeProperty);
                             resource.addProperty(property, splitLiteral);
@@ -443,8 +436,6 @@ public class StixParser {
                 case "delivers":
                     return "delivers";
 
-
-                // Add more mappings as needed
                 default:
                     return stixRelationship;
             }
@@ -481,7 +472,6 @@ public class StixParser {
                                 str[i] = Character.toUpperCase(str[i + 1]);
                             else
                                 str[j] = str[j + 1];
-                            //str[str.length-1]=' ';
                         }
                         char[] newstr = new char[str.length - 1];
                         for (int j = 0; j < str.length - 1; j++) {
@@ -498,12 +488,9 @@ public class StixParser {
                 "yyyy-MM-dd", "dd-MM-yyyy", "MM/dd/yyyy", "yyyy/MM/dd"
         };
         public static String detectLiteralType (String nameLiteral){
-            // Check if it's an integer
             if (isInteger(nameLiteral)) {
                 return "Integer";
             }
-
-            // Check if it's a date
             if (isDate(nameLiteral)) {
                 return "Date";
             }
@@ -527,7 +514,7 @@ public class StixParser {
             }
         }
 
-        // Helper method to check if a string is a date (using multiple date formats)
+
         public static boolean isDate (String input){
             for (String format : DATE_FORMATS) {
                 if (isValidFormat(format, input)) {
@@ -539,7 +526,7 @@ public class StixParser {
         public static boolean isBoolean (String input){
             return input.equalsIgnoreCase("true") || input.equalsIgnoreCase("false");
         }
-        // Helper method to validate the date format
+
         private static boolean isValidFormat (String format, String value){
             SimpleDateFormat sdf = new SimpleDateFormat(format);
             sdf.setLenient(false);
@@ -563,7 +550,6 @@ public class StixParser {
         for (JsonElement refElement : externalReferences) {
             JsonObject externalRef = refElement.getAsJsonObject();
 
-            // Create an RDF resource for each external reference
             String externalId = getAsString(externalRef, "external_id");
             String extenalname=getAsString(externalRef,"source_name");
             if(externalId==null)
@@ -588,14 +574,10 @@ public class StixParser {
                     externalReferenceResource.addProperty(ResourceFactory.createProperty(UCO_NAMESPACE, "description"),
                             model.createTypedLiteral(externalRef.get("description").getAsString(), XSD.xstring.getURI()));
                 }
-                // Add the external reference to the STIX object (resource)
+
                 resource.addProperty(ResourceFactory.createProperty(UCO_NAMESPACE, "hasExternalReference"), externalReferenceResource);
                 model.createResource(UCO_NAMESPACE + "hasExternalReference").addProperty(RDF.type, OWL.ObjectProperty);
             }
-
-
-
-
 
         }
     }
