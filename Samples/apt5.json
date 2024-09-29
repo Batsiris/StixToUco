@@ -1,0 +1,227 @@
+{
+  "type": "bundle",
+  "id": "bundle--cp23f10b-3ed2-4a9f-b4f1-d680a7fc9401",
+  "objects": [ 
+    {
+      "type": "intrusion-set",
+      "spec_version": "2.1",
+      "id": "intrusion-set--da1065ce-972c-4605-8755-9cd1074e3b5a",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "name": "APT1",
+      "description": "APT1 is a single organization of operators that has conducted a cyber espionage campaign against a broad range of victims since at least 2006.",
+      "first_seen": "2006-06-01T18:13:15.684Z",
+      "resource_level": "government",
+      "primary_motivation": "organizational-gain",
+      "aliases": [
+        "Comment Crew",
+        "Comment Group",
+        "Shady Rat"
+      ]
+    },
+ {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "pattern_type": "stix",
+      "id": "indicator--3f3ff9f1-bb4e-4392-89e5-1991179042ba",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "name": "FQDN hugesoft.org",
+      "description": "Test description.",
+      "pattern": "[domain-name:value = 'hugesoft.org']",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2015-05-15T09:12:16.432678Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "pattern_type": "stix",
+      "id": "indicator--8390fd29-24ed-45d4-84d7-c5e5feaf195d",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "name": "FQDN arrowservice.net",
+      "description": "Test description.",
+      "pattern": "[domain-name:value = 'arrowservice.net']",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2015-05-15T09:12:16.432678Z"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "pattern_type": "stix",
+      "id": "indicator--1002c58e-cbde-4930-b5ee-490037fd4f7e",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "name": "FQDN msnhome.org",
+      "description": "Test description.",
+      "pattern": "[domain-name:value = 'msnhome.org']",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2015-05-15T09:12:16.432678Z"
+    },
+{
+      "type": "malware",
+      "spec_version": "2.1",
+      "is_family": false,
+      "id": "malware--2485b844-4efe-4343-84c8-eb33312dd56f",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "name": "MANITSME",
+      "malware_types": [
+        "backdoor",
+        "dropper",
+        "remote-access-trojan"
+      ],
+      "description": "This malware will beacon out at random intervals to the remote attacker. The attacker can run programs, execute arbitrary commands, and easily upload and download files."
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "is_family": false,
+      "id": "malware--c0217091-9d3d-42a1-8952-ccc12d4ad8d0",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "name": "WEBC2-UGX",
+      "malware_types": [
+        "backdoor",
+        "remote-access-trojan"
+      ],
+      "description": "A WEBC2 backdoor is designed to retrieve a Web page from a C2 server. It expects the page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands."
+    },
+{
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--6d179234-61fc-40c4-ae86-3d53308d8e65",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "name": "Ugly Gorilla",
+      "threat_actor_types": [
+        "nation-state",
+        "spy"
+      ],
+      "roles": [
+        "malware-author",
+        "agent",
+        "infrastructure-operator"
+      ],
+      "resource_level": "government",
+      "aliases": [
+        "Greenfield",
+        "JackWang",
+        "Wang Dong"
+      ],
+      "primary_motivation": "organizational-gain"
+    },
+{
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--a9119a87-6576-46af-bfd7-4fbe55926671",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "name": "JackWang",
+      "identity_class": "individual",
+      "sectors": [
+        "government-national"
+      ],
+      "contact_information": "uglygorilla@163.com"
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--e88ab115-7768-4630-baa3-3d49a7d946ea",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "name": "Wang Dong",
+      "identity_class": "individual",
+      "sectors": [
+        "government-national"
+      ],
+      "contact_information": "uglygorilla@163.com"
+    },
+ {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--6598bf44-1c10-4218-af9f-75b5b71c23a7",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--6d179234-61fc-40c4-ae86-3d53308d8e65",
+      "target_ref": "malware--2485b844-4efe-4343-84c8-eb33312dd56f"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--35f7a2bb-e4e2-4e56-8693-665bbb64162c",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--6d179234-61fc-40c4-ae86-3d53308d8e65",
+      "target_ref": "malware--c0217091-9d3d-42a1-8952-ccc12d4ad8d0"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--fd5cda8b-f45f-43bd-a9da-e521ddd7126e",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "threat-actor--6d179234-61fc-40c4-ae86-3d53308d8e65",
+      "target_ref": "identity--a9119a87-6576-46af-bfd7-4fbe55926671"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--a20b8626-a15e-41f0-bcb1-c05321e126f0",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "threat-actor--6d179234-61fc-40c4-ae86-3d53308d8e65",
+      "target_ref": "identity--e88ab115-7768-4630-baa3-3d49a7d946ea"
+    },
+  {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--389a8dcd-8663-4f18-8584-d69a77bd71aa",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--3f3ff9f1-bb4e-4392-89e5-1991179042ba",
+      "target_ref": "threat-actor--6d179234-61fc-40c4-ae86-3d53308d8e65"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b345f1d0-09c5-4a71-bfc6-a52bd5923a01",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--8390fd29-24ed-45d4-84d7-c5e5feaf195d",
+      "target_ref": "threat-actor--6d179234-61fc-40c4-ae86-3d53308d8e65"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--912b31d0-09c5-4a71-bfc6-a52bd5989a1b",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--1002c58e-cbde-4930-b5ee-490037fd4f7e",
+      "target_ref": "threat-actor--6d179234-61fc-40c4-ae86-3d53308d8e65"
+    },
+     {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--765815fb-d993-4a1d-959f-7f7bcc4a5eb3",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "relationship_type": "attributed-to",
+      "source_ref": "intrusion-set--da1065ce-972c-4605-8755-9cd1074e3b5a",
+      "target_ref": "threat-actor--6d179234-61fc-40c4-ae86-3d53308d8e65"
+    }
+]
+}
