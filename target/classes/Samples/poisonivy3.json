@@ -1,0 +1,60 @@
+{
+  "type": "bundle",
+  "id": "bundle--cf20f10b-3ed2-4a9f-b4f1-d660a7fc3364",
+  "objects": [  
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--81cade27-7df8-4730-836b-62d880e6d9c7",
+      "created": "2015-08-15T09:12:16.432Z",
+      "modified": "2015-08-15T09:12:16.432Z",
+      "name": "FireEye, Inc.",
+      "identity_class": "organization",
+      "sectors": [
+        "technology"
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--19da6e1c-69a8-4c2f-886d-d620d09d3c8b",
+      "created": "2015-08-15T09:12:16.432Z",
+      "modified": "2015-08-15T09:12:16.432Z",
+      "external_references": [
+        {
+          "source_name": "capec",
+          "description": "spear phishing",
+          "external_id": "CAPEC-163"
+        }
+      ],
+      "name": "Spear Phishing Attack Pattern used by admin@338",
+      "description": "The preferred attack vector used by admin@338 is spear-phishing emails. Using content that is relevant to the target, these emails are designed to entice the target to open an attachment that contains the malicious PIVY server code.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mandiant-attack-model",
+          "phase_name": "initial-compromise"
+        }
+      ]
+    },
+{
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--752c225d-d6f6-4456-9130-d9580fd4012n",
+      "created": "2015-08-15T09:12:16.432Z",
+      "modified": "2015-08-15T09:12:16.432Z",
+      "name": "admin@338",
+      "description": "Active since 2008, this campaign , though we have also seen activity in the telecom, government, and defense sectors.",
+      "first_seen": "2008-01-07T00:00:00.000000Z"
+    },
+        {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--26c5311c-9d9b-4b9b-b3b5-bac10e16a756",
+      "created": "2015-08-15T09:12:16.432Z",
+      "modified": "2015-08-15T09:12:16.432Z",
+      "relationship_type": "uses",
+      "source_ref": "campaign--752c225d-d6f6-4456-9130-d9580fd4012n",
+      "target_ref": "attack-pattern--19da6e1c-69a8-4c2f-886d-d620d09d3c8b"
+    }
+ ]
+}

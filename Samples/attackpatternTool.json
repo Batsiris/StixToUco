@@ -1,0 +1,281 @@
+{
+    "type": "bundle",
+    "id": "bundle--cp23f10b-3ed2-4a9f-b4f1-d680a7fc9401",
+    "objects": [
+        {
+            "type": "tool",
+            "spec_version": "2.1",
+            "id": "tool--1cf6a3b8-be43-4c1a-b042-546a890c31b2",
+            "created": "2015-05-15T09:12:16.432Z",
+            "modified": "2015-05-15T09:12:16.432Z",
+            "name": "gsecdump",
+            "tool_types": [
+                "credential-exploitation"
+            ],
+            "description": "Obtains password hashes from the Windows registry, including the SAM file, cached domain credentials, and LSA secrets",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "mandiant-attack-lifecycle-model",
+                    "phase_name": "escalate-privileges"
+                }
+            ],
+            "external_references": [
+                {
+                    "source_name": "gsecdump",
+                    "url": "http://www.truesec.se"
+                }
+            ]
+        },
+        {
+            "type": "tool",
+            "spec_version": "2.1",
+            "id": "tool--4d82bd3e-24a3-4f9d-b8f3-b57267fe06a9",
+            "created": "2015-05-15T09:12:16.432Z",
+            "modified": "2015-05-15T09:12:16.432Z",
+            "name": "lslsass",
+            "tool_types": [
+                "credential-exploitation"
+            ],
+            "description": "Dump active logon session password hashes from the lsass process",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "mandiant-attack-lifecycle-model",
+                    "phase_name": "escalate-privileges"
+                }
+            ],
+            "external_references": [
+                {
+                    "source_name": "lslsass",
+                    "url": "http://www.truesec.se"
+                }
+            ]
+        },
+        {
+            "type": "tool",
+            "spec_version": "2.1",
+            "id": "tool--7de5dfcc-6809-4772-9f11-cf26c2be53aa",
+            "created": "2015-05-15T09:12:16.432Z",
+            "modified": "2015-05-15T09:12:16.432Z",
+            "name": "mimikatz",
+            "tool_types": [
+                "credential-exploitation"
+            ],
+            "description": "A utility primarily used for dumping password hashes",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "mandiant-attack-lifecycle-model",
+                    "phase_name": "escalate-privileges"
+                }
+            ],
+            "external_references": [
+                {
+                    "source_name": "mimikatz",
+                    "url": "http://blog.gentilkiwi.com/mimikatz"
+                }
+            ]
+        },
+        {
+            "type": "tool",
+            "spec_version": "2.1",
+            "id": "tool--266b12f2-aa16-4607-809e-f2d33eebb52e",
+            "created": "2015-05-15T09:12:16.432Z",
+            "modified": "2015-05-15T09:12:16.432Z",
+            "name": "pass-the-hash-toolkit",
+            "tool_types": [
+                "credential-exploitation"
+            ],
+            "description": "Allows an intruder to “pass” a password hash (without knowing the original password) to log in to systems",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "mandiant-attack-lifecycle-model",
+                    "phase_name": "escalate-privileges"
+                }
+            ],
+            "external_references": [
+                {
+                    "source_name": "pass-the-hash-toolkit",
+                    "url": "http://oss.coresecurity.com/projects/pshtoolkit.htm"
+                }
+            ]
+        },
+        {
+            "type": "tool",
+            "spec_version": "2.1",
+            "id": "tool--98fd8dc1-6cc7-4908-899f-07473f55149a",
+            "created": "2015-05-15T09:12:16.432Z",
+            "modified": "2015-05-15T09:12:16.432Z",
+            "name": "pwdump7",
+            "tool_types": [
+                "credential-exploitation"
+            ],
+            "description": "Dumps password hashes from the Windows registry",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "mandiant-attack-lifecycle-model",
+                    "phase_name": "escalate-privileges"
+                }
+            ],
+            "external_references": [
+                {
+                    "source_name": "pwdump7",
+                    "url": "http://www.tarasco.org/security/pwdump_7/"
+                }
+            ]
+        },
+        {
+            "type": "tool",
+            "spec_version": "2.1",
+            "id": "tool--4215b0e5-928e-4b2a-9b5f-64819f287f48",
+            "created": "2015-05-15T09:12:16.432Z",
+            "modified": "2015-05-15T09:12:16.432Z",
+            "name": "pwdumpX",
+            "tool_types": [
+                "credential-exploitation"
+            ],
+            "description": "Dumps password hashes from the Windows registry",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "mandiant-attack-lifecycle-model",
+                    "phase_name": "escalate-privileges"
+                }
+            ]
+        },
+        {
+            "type": "tool",
+            "spec_version": "2.1",
+            "id": "tool--ce45f721-af14-4fc0-938c-000c16186418",
+            "created": "2015-05-15T09:12:16.432Z",
+            "modified": "2015-05-15T09:12:16.432Z",
+            "name": "cachedump",
+            "tool_types": [
+                "credential-exploitation"
+            ],
+            "description": "This program extracts cached password hashes from a system’s registry.",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "mandiant-attack-lifecycle-model",
+                    "phase_name": "escalate-privileges"
+                }
+            ]
+        },
+        {
+            "type": "tool",
+            "spec_version": "2.1",
+            "id": "tool--e9778c42-bc2f-4eda-9fb4-6a931834f68c",
+            "created": "2015-05-15T09:12:16.432Z",
+            "modified": "2015-05-15T09:12:16.432Z",
+            "name": "fgdump",
+            "tool_types": [
+                "credential-exploitation"
+            ],
+            "description": "Windows password hash dumper",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "mandiant-attack-lifecycle-model",
+                    "phase_name": "escalate-privileges"
+                }
+            ],
+            "external_references": [
+                {
+                    "source_name": "fgdump",
+                    "url": "http://www.foofus.net/fizzgig/fgdump/"
+                }
+            ]
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--e13f3e6d-4f9c-4265-b1cf-f997a1bf7827",
+            "created": "2015-05-15T09:12:16.432Z",
+            "modified": "2015-05-15T09:12:16.432Z",
+            "name": "Privilege Escalation",
+            "description": "Escalating privileges involves acquiring items (most often usernames and passwords) that will allow access to more resources within the network. APT1 predominantly uses publicly available tools to dump password hashes from victim systems in order to obtain legitimate user credentials.",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "mandiant-attack-lifecycle-model",
+                    "phase_name": "escalate-privileges"
+                }
+            ]
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--066593e1-49a4-4a3d-a5bb-2e0b4ce1a63c",
+            "created": "2015-05-15T09:12:16.432Z",
+            "modified": "2015-05-15T09:12:16.432Z",
+            "relationship_type": "uses",
+            "source_ref": "attack-pattern--e13f3e6d-4f9c-4265-b1cf-f997a1bf7827",
+            "target_ref": "tool--ce45f721-af14-4fc0-938c-000c16186418"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--b385d984-ba8a-4180-8e0e-af7b9987bcb8",
+            "created": "2015-05-15T09:12:16.432Z",
+            "modified": "2015-05-15T09:12:16.432Z",
+            "relationship_type": "uses",
+            "source_ref": "attack-pattern--e13f3e6d-4f9c-4265-b1cf-f997a1bf7827",
+            "target_ref": "tool--e9778c42-bc2f-4eda-9fb4-6a931834f68c"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--6ffbec81-fa01-4b98-8726-c9d9fb2ef6b6",
+            "created": "2015-05-15T09:12:16.432Z",
+            "modified": "2015-05-15T09:12:16.432Z",
+            "relationship_type": "uses",
+            "source_ref": "attack-pattern--e13f3e6d-4f9c-4265-b1cf-f997a1bf7827",
+            "target_ref": "tool--1cf6a3b8-be43-4c1a-b042-546a890c31b2"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--25586f60-bc27-47d6-9a8e-d1c6456c2f28",
+            "created": "2015-05-15T09:12:16.432Z",
+            "modified": "2015-05-15T09:12:16.432Z",
+            "relationship_type": "uses",
+            "source_ref": "attack-pattern--e13f3e6d-4f9c-4265-b1cf-f997a1bf7827",
+            "target_ref": "tool--4d82bd3e-24a3-4f9d-b8f3-b57267fe06a9"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--d080c1ea-1dd7-4da9-b64b-e68bb1c5887e",
+            "created": "2015-05-15T09:12:16.432Z",
+            "modified": "2015-05-15T09:12:16.432Z",
+            "relationship_type": "uses",
+            "source_ref": "attack-pattern--e13f3e6d-4f9c-4265-b1cf-f997a1bf7827",
+            "target_ref": "tool--7de5dfcc-6809-4772-9f11-cf26c2be53aa"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--c9c66478-c9cf-49cd-bca2-66ce34a9c56d",
+            "created": "2015-05-15T09:12:16.432Z",
+            "modified": "2015-05-15T09:12:16.432Z",
+            "relationship_type": "uses",
+            "source_ref": "attack-pattern--e13f3e6d-4f9c-4265-b1cf-f997a1bf7827",
+            "target_ref": "tool--266b12f2-aa16-4607-809e-f2d33eebb52e"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--44686fda-311c-4cdb-abef-80e922e7a3fb",
+            "created": "2015-05-15T09:12:16.432Z",
+            "modified": "2015-05-15T09:12:16.432Z",
+            "relationship_type": "uses",
+            "source_ref": "attack-pattern--e13f3e6d-4f9c-4265-b1cf-f997a1bf7827",
+            "target_ref": "tool--98fd8dc1-6cc7-4908-899f-07473f55149a"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--340cb676-79ff-49e9-b6ba-cd27e06772c4",
+            "created": "2015-05-15T09:12:16.432Z",
+            "relationship_type": "uses",
+            "source_ref": "attack-pattern--e13f3e6d-4f9c-4265-b1cf-f997a1bf7827",
+            "target_ref": "tool--4215b0e5-928e-4b2a-9b5f-64819f287f48",
+            "modified": "2015-05-15T09:12:16.432Z"
+        }
+    ]
+}

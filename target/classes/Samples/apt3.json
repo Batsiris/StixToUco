@@ -1,0 +1,102 @@
+{
+  "type": "bundle",
+  "id": "bundle--cf20f99b-3ed2-4a9f-b4f1-d660a7fc8824",
+  "objects": [  
+ {
+      "type": "malware",
+      "spec_version": "2.1",
+      "is_family": false,
+      "id": "malware--0f01c5a3-f516-4450-9381-4dd9f2279411",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "name": "WEBC2 Backdoor",
+      "malware_types": [
+        "backdoor",
+        "remote-access-trojan"
+      ],
+      "description": "A WEBC2 backdoor is designed to retrieve a Web page from a C2 server. It expects the page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mandiant-attack-lifecycle-model",
+          "phase_name": "establish-foothold"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--1e2c4237-d469-4144-9c0b-9e5c0c513c49",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "name": "Establishing a Foothold",
+      "description": "APT1 establishes a foothold once email recipients open a malicious file and a backdoor is subsequently installed.  In almost every case, APT backdoors initiate outbound connections to the intruder’s 'command and control' (C2) server. While APT1 intruders occasionally use publicly available backdoors such as Poison Ivy and Gh0st RAT, the vast majority of the time they use what appear to be their own custom backdoors. APT1’s backdoors are in two categories: 'Beachhead Backdoors' and 'Standard Backdoors.' Beachhead Backdoors offer the attacker a toe-hold to perform simple tasks like retrieve files, gather basic system information and trigger the execution of other more significant capabilities such as a standard backdoor. APT1’s beachhead backdoors are usually what we call WEBC2 backdoors.Additionally, many of APT1’s backdoors use SSL encryption so that communications are hidden in an encrypted SSL tunnel.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mandiant-attack-lifecycle-model",
+          "phase_name": "establish-foothold"
+        }
+      ]
+    },
+  {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--85b2a834-e4b5-4299-9a6b-bf2ac26dde7b",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "relationship_type": "uses",
+      "source_ref": "attack-pattern--1e2c4237-d469-4144-9c0b-9e5c0c513c49",
+      "target_ref": "malware--0f01c5a3-f516-4450-9381-4dd9f2279411"
+    },
+{
+      "type": "malware",
+      "spec_version": "2.1",
+      "is_family": false,
+      "id": "malware--33159b98-3264-4e10-a968-d67975b6272f",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "name": "HUC Packet Transmit Tool (HTRAN)",
+      "malware_types": [
+        "backdoor",
+        "remote-access-trojan"
+      ],
+      "description": "When APT1 attackers are not using WEBC2, they require a “command and control” (C2) user interface so they can issue commands to the backdoor. This interface sometimes runs on their personal attack system, which is typically in Shanghai. In these instances, when a victim backdoor makes contact with a hop, the communications need to be forwarded from the hop to the intruder’s Shanghai system so the backdoor can talk to the C2 server software. We have observed 767 separate instances in which APT1 intruders used the publicly available “HUC Packet Transmit Tool” or HTRAN on a hopThe HTRAN utility is merely a middle-man, facilitating connections between the victim and the attacker who is using the hop point.",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mandiant-attack-lifecycle-model",
+          "phase_name": "establish-foothold"
+        }
+      ]
+    },
+   {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b2806dec-6f20-4a0d-ae9a-d4b1f7be71e3",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--da1d061b-2bc9-467a-b16f-8d14f468e1f0",
+      "target_ref": "malware--33159b98-3264-4e10-a968-d67975b6272f"
+    },
+ {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "pattern_type": "stix",
+      "id": "indicator--da1d061b-2bc9-467a-b16f-8d14f468e1f0",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "name": "HTRAN Hop Point Accessor",
+      "description": "Test description.",
+      "pattern": "[ipv4-addr:value = '58.246.0.0/15']",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "valid_from": "2015-05-15T09:12:16.432678Z",
+      "kill_chain_phases": [
+        {
+          "kill_chain_name": "mandiant-attack-lifecycle-model",
+          "phase_name": "establish-foothold"
+        }
+      ]
+    }
+    ]
+}

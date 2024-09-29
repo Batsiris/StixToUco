@@ -1,0 +1,65 @@
+{
+  "type": "bundle",
+  "id": "bundle--cf20f99b-3ed2-4a9f-b4f1-d660a7fc3364",
+  "objects": [  
+{
+      "type": "indicator",
+      "spec_version": "2.1",
+      "pattern_type": "stix",
+      "id": "indicator--4e11b23f-732b-418e-b786-4dbf65459d33",
+      "created": "2015-07-15T09:12:16.432Z",
+      "modified": "2015-07-15T09:12:16.432Z",
+      "name": "nkr.iphone.qpoe.com",
+      "description": "th3bug used domain name: nkr.iphone.qpoe.com. The domain nkr.iphone.qpoe.com resolved to 180.210.206.96 on January 12, 2012 and also 101.78.151.179 on December 23, 2011.",
+      "pattern": "[domain-name:value = 'nkr.iphone.qpoe.com' OR ipv4-addr:value = '180.210.206.96' OR ipv4-addr:value = '101.78.151.179']",
+      "indicator_types": [
+        "malicious-activity",
+        "attribution"
+      ],
+      "valid_from": "2015-07-15T09:12:16.432678Z"
+    },
+{
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--d02a1560-ff69-49f4-ac34-919b8aa4b92p",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "name": "th3bug",
+      "description": "This ongoing campaign targets a number of industries but appears to prefer targets in higher education and the healthcare sectors.",
+      "first_seen": "2009-10-26T00:00:00.000000Z"
+    },
+ {
+      "type": "malware",
+      "spec_version": "2.1",
+      "is_family": true,
+      "id": "malware--dc669921-4a1a-470d-bfae-694e740ce471",
+      "created": "2015-07-15T09:12:16.432Z",
+      "modified": "2015-07-15T09:12:16.432Z",
+      "name": "PIVY Variant (8002debc47e04d534b45f7bb7dfcab4d)",
+      "description": "The sample 8002debc47e04d534b45f7bb7dfcab4d connected to kr.iphone.qpoe.com with the PIVY password admin.",
+      "malware_types": [
+        "remote-access-trojan"
+      ]
+    },
+{
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--937f310a-396a-403f-bb6f-400ad8920028",
+      "created": "2015-05-15T09:12:16.432Z",
+      "modified": "2015-05-15T09:12:16.432Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--4e11b23f-732b-418e-b786-4dbf65459d33",
+      "target_ref": "campaign--d02a1560-ff69-49f4-ac34-919b8aa4b92p"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--14a06709-3c0b-4e72-ad49-dd0f6d775e67",
+      "created": "2015-07-15T09:12:16.432Z",
+      "modified": "2015-07-15T09:12:16.432Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--4e11b23f-732b-418e-b786-4dbf65459d33",
+      "target_ref": "malware--dc669921-4a1a-470d-bfae-694e740ce471"
+    }  
+ ]
+}

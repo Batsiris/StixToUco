@@ -1,0 +1,58 @@
+{
+  "type": "bundle",
+  "id": "bundle--cp20f10b-3ed2-4a9f-b4f1-d680a7fc9829",
+  "objects": [ 
+ {
+      "type": "malware",
+      "spec_version": "2.1",
+      "is_family": true,
+      "id": "malware--61a62a6a-9a18-4758-8e52-622431c4b8bc",
+      "created": "2015-06-15T09:12:16.432Z",
+      "modified": "2015-06-15T09:12:16.432Z",
+      "name": "PIVY Variant (808e21d6efa2884811fbd0adf67fda78)",
+      "description": "The key@123 sample (password for admin@338), 808e21d6efa2884811fbd0adf67fda78, connects directly to 219.76.208.163",
+      "malware_types": [
+        "remote-access-trojan"
+      ]
+    },
+ {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--81cade27-7df8-4730-836b-62d880e6d2c3",
+      "created": "2015-06-15T09:12:16.432Z",
+      "modified": "2015-06-15T09:12:16.432Z",
+      "name": "FireEye, Inc.",
+      "identity_class": "organization",
+      "sectors": [
+        "technology"
+      ]
+    }, 
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--70b3d5f6-374b-4488-8688-729b6eedac2b",
+      "created_by_ref": "identity--81cade27-7df8-4730-836b-62d880e6d2c3",
+      "created": "2015-06-15T09:12:16.432Z",
+      "modified": "2015-06-15T09:12:16.432Z",
+      "name": "Analyze with FireEye Calamine Toolset",
+      "description": "Calamine is a set of free tools to help organizations detect and examine Poison Ivy infections on their systems. The package includes these components: PIVY callback-decoding tool (ChopShop Module) and PIVY memory-decoding tool (PIVY PyCommand Script).",
+      "external_references": [
+        {
+          "source_name": "Calamine  Module",
+          "description": "The FireEye Poison Ivy decoder checks the beginning of each TCP session for possible PIVY challengeresponse sequences. If found, the module will try to validate the response using one or more passwords supplied as arguments.",
+          "url": "https://github.com/fireeye/chopshop"
+        }
+      ]
+    },      
+ {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--134c393e-cbe0-433c-9a7a-95263ed8578f",
+      "created": "2015-06-15T09:12:16.432Z",
+      "modified": "2015-06-15T09:12:16.432Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--70b3d5f6-374b-4488-8688-729b6eedac2b",
+      "target_ref": "malware--61a62a6a-9a18-4758-8e52-622431c4b8bc"
+    }
+ ]
+}
